@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NetShop">
+</Property><Property Name="解决方案文件" Value="D:\新建文件夹 (2)\程序其他\毕业设计\51CTO下载-ASP.NET 2.0 网上书店毕业设计\网上书店\BookShop\NetShop.sln">
+</Property><Property Name="Date" Value="2016年4月30日星期六">
+</Property><Property Name="Time" Value="20:14">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="NetShop.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="NetShop.sln" Description="Converted">
+</Event></UpgradeLog>
