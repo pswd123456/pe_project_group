@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPage.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" Title="网上书店首页" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="FartherMain" Runat="Server" >
-<table  cellpadding=0 cellspacing=0  style=" font-size: 9pt; font-family: 宋体;width :560px; vertical-align :top ; border-top-style: none; border-right-style: none; border-left-style: none; text-align: left; border-bottom-style: none;"  >
+<table  cellpadding=0 cellspacing=0  style=" font-size: 9pt; font-family: 宋体;width :760px; vertical-align :top ; border-top-style: none; border-right-style: none; border-left-style: none; text-align: left; border-bottom-style: none;"  >
         <tr align="left">
             <td  align="left" style="width :560px;height :22px; vertical-align: top; text-align: left;" colspan="0" rowspan="0" background ="../Images/index/精品推荐.jpg" >
              </td>

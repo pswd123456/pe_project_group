@@ -1,5 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="LoadingControl.ascx.cs" Inherits="LoadingControl" %>        
-<table style="background-image: url(../Images/index/µÇÂ¼.jpg); width: 220px; height: 117px" border="0" cellpadding="0" cellspacing="0" runat =server   id=tabLoading >
+<table style="/*background-image: url(../Images/index/µÇÂ¼.jpg);*/ width: 220px; height: 117px" border="0" cellpadding="0" cellspacing="0" runat =server   id=tabLoading >
     <tr>
         <td align="center" valign="top" style="height: 117px; width: 220px;" >
               <table style ="width: 178px; height: 90px; font-size: 9pt; font-family: ËÎÌå;"   >

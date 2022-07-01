@@ -1,107 +1,71 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-<%@ Register Src="../UserControl/navigationControl.ascx" TagName="navigationControl"
-    TagPrefix="uc2" %>
-<%@ Register Src="../UserControl/MHelp.ascx" TagName="MHelp" TagPrefix="uc1" %>
-<%@ Register Src="../UserControl/bottom.ascx" TagName="bottom" TagPrefix="uc6" %>
+
+<%@ Register Src="../UserControl/navigationControl.ascx" TagName="navigationControl" TagPrefix="uc2" %>
+
 <%@ Register Src="../UserControl/LoadingControl.ascx" TagName="LoadingControl" TagPrefix="uc7" %>
 <%@ Register Src="../UserControl/ShoppingCarControl.ascx" TagName="ShoppingCarControl" TagPrefix="uc8" %>
 <%@ Register Src="~/UserControl/BookSearch.ascx" TagName="BookSearch" tagPrefix="uc9" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<!DOCTYPE html>
+<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+<html>
 <head runat="server">
-    <title>母版页</title>   
-   <style type="text/css">
-<!--
-body {margin-top:0px}
-a:link {
-	color: #80A5E7;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #7D9BE3;
-}
-a:hover {
-	text-decoration: none;
-}
-a:active {
-	text-decoration: none;
-	color: #0000FF;
-}
--->
-</style>    
+    <title>Master page</title>   
+    <style>
+        .mytext{
+            color:white;
+            font-size:20px;
+            font-family:Microsoft YaHei;
+        }
+        #box-container{
+            display:flex;
+            height:500px;
+        }
+        #leftBox{
+            width:20%;
+            height:50%;
+        }
+        #rightBox{
+            width:80%;
+            height:100%;
+        }
+    </style>    
 </head>
 <body >
     <form id="form1" runat="server" >
-    <table style=" width :1002px; height :855px; font-size: 9pt; font-family: 宋体; background-image: url(../Images/index/左右两侧背景.jpg); vertical-align :top" align =center >
-    <tr valign =top  align =left >
-    <td bordercolor =ActiveBorder>
-   
-    <table style="width :780px; height :97px;　font-size: 9pt; font-family: 宋体; background-image: url(../Images/index/navigation.jpg);"  align =center border="0" cellpadding="0" cellspacing="0">
-    <tr valign =top ><td colspan =2 align =left style="width: 785px; height: 93px;"  valign =top rowspan="2" ><br />
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;<asp:LinkButton ID="lnkbtnShopCart" runat="server" OnClick="lnkbtnShopCart_Click" Font-Names="宋体" Font-Underline="False" ForeColor="Black" CausesValidation="False">购物车</asp:LinkButton>
-        |<a href="mailto:huaer-aini@163.com" style=" color:Black; font-size: 9pt; font-family: 宋体;  text-decoration :none;">联系管理员</a> |<a href="#" style=" color:Black; font-size: 9pt; font-family: 宋体;  text-decoration :none;" onclick ="this.style.behavior='url(#default#homepage)';this.sethomepage('http://weggamestv.blog.163.com')">设置主页</a>
-        |<a href="#" onclick="window.external.addFavorite('http://weggamestv.blog.163.com','我的网易.NET技术博客');"><font color="white" style=" color:Black; font-size: 9pt; font-family: 宋体;  text-decoration :none;">收藏本站</font></a>
-        <br /><br />
-        &nbsp; &nbsp; &nbsp;
-         <font color="white">今天是：</font><asp:Label ID="labDate" runat="server" Font-Names="宋体" ForeColor="White"><%# System.DateTime.Now.ToLongDateString() %></asp:Label>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp;<asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/User/index.aspx" ForeColor="White">书城首页</asp:HyperLink>&nbsp;
-        <font color="white">/&nbsp; </font><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=1" ForeColor="White">精品图书</asp:HyperLink>&nbsp;
-        <font color="white">/</font>&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=3" ForeColor="White">特价图书</asp:HyperLink>
-        &nbsp;
-        <font color="white">/&nbsp; </font><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=2" ForeColor="White">热销图书</asp:HyperLink>&nbsp;<br />
-        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-        <asp:Label ID="labDateTime" runat="server" Text="Label" Font-Names="宋体" ForeColor="White"></asp:Label></td> 
-     </tr> 
-     <tr>
-        </tr>
-    </table>
-   
-      <table style="width :780px; height :420px;　font-size: 9pt; font-family: 宋体;"  align =center border="0" cellpadding="0" cellspacing="0">
-        <tr>
-        <td valign="top"  align =left style="width: 220px; height :666px" >
-           <uc7:LoadingControl ID="LoadingControl1" runat="server"  />
-            <br />
-            <uc2:navigationControl ID="NavigationControl1" runat="server" />
-        </td>
-        <td align =left valign =top style="width: 560px" >
-        <table style="width :538px; height :120px;" background ="../Images/index/图书展销---最底部.jpg" border="0" cellpadding="0" cellspacing="0">
-        <tr style="width :538px; height :70px;" align =center>
-        <td background ="../Images/index/banner.jpg" style="height: 50px">
-        </td>
-        </tr>
-        <tr style="width :538px; height :50px;" align =center>
-        <td bgcolor="#EFF3FB"><uc9:BookSearch ID="BookSearch1" runat="server" />
-            </td>
-        </tr>
-        
-        </table>
-                <asp:ContentPlaceHolder ID="FartherMain" runat =server >
-      </asp:ContentPlaceHolder>
-          
-        </td>
-        </tr>
-     <tr align =right  >
-    <td colspan =2 align =center cellpadding=0 cellspacing=0 >
-        <uc1:MHelp id="MHelp1" runat="server">
-        </uc1:MHelp>
-       </td>  
-    </tr>
-      <tr align =right >
-    <td colspan =2 >
-        <uc6:bottom ID="Bottom1" runat="server" /></td>  
-    </tr>
-    </table>
-   
-    
-    </td>
-    </tr>
-    </table>
-   
+
+        <div id="header" style="background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
+
+            <div style="width:80px; float:right; position:relative; right:10px;">
+                <asp:LinkButton class="btn btn-danger btn-xs" ID="lnkbtnShopCart" runat="server" OnClick="lnkbtnShopCart_Click" CausesValidation="False">MYCART</asp:LinkButton>
+            </div>
+                
+            <div align="center">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/index.aspx" class="mytext">Home</asp:HyperLink>
+                <font color="white">/ </font><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=1" ForeColor="White">Category1</asp:HyperLink>
+                <font color="white">/</font><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=3" ForeColor="White">Category2</asp:HyperLink>
+                <font color="white">/ </font><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=2" ForeColor="White">Category3</asp:HyperLink>
+            </div>
+
+        </div>
+
+        <div id="searchBar" style="" align="center">
+            <uc9:BookSearch ID="BookSearch1" runat="server" />
+        </div>
+
+        <div id="box-container">
+            <div id="leftBox" >
+                <uc7:LoadingControl ID="LoadingControl2" runat="server"  />
+                <uc2:navigationControl ID="NavigationControl2" runat="server" />
+            </div>
+            <div id="rightBox" >
+                <asp:contentplaceholder id="farthermain" runat ="server" ></asp:contentplaceholder>
+            </div>
+        </div>
+
     </form>
-</body>
+    </body>
 </html>

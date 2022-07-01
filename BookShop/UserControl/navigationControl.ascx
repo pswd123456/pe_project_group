@@ -1,5 +1,5 @@
 ﻿  <%@ Control Language="C#" AutoEventWireup="true" CodeFile="navigationControl.ascx.cs" Inherits="UserControl_navigationControl" %>
- <table  style="width: 220px; height: 549px; font-size: 9pt; font-family: 宋体; vertical-align :top ;"  background ="../Images/index/左侧导航背景.jpg" border="0" cellpadding="0" cellspacing="0" >
+ <table  style="width: 220px; height: 549px; font-size: 9pt; font-family: 宋体; vertical-align :top ;"  <%--background ="../Images/index/左侧导航背景.jpg--%>" border="0" cellpadding="0" cellspacing="0" >
     <tr valign =top  align =center >
         <td>
         <br />
