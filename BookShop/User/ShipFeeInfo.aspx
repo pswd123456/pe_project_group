@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>配送价格</title>
+    <title>Shipping price</title>
 </head>
 <body style ="font-family :宋体; font-size :9pt;">
     <form id="form1" runat="server">
@@ -13,7 +13,7 @@
 				<tr>
 					<th height="25" align="left">
 						
-						配送费(M元/公里/千克)</th>
+						Delivery fee (M yuan/km/kg)</th>
 					
 				<tr>
 				</tr>
@@ -23,15 +23,15 @@
 					<td height="23" >
                       <asp:GridView ID="gvShip" runat="server" AllowPaging =True  AutoGenerateColumns =False DataKeyNames ="ShipID" Width =100% HeaderStyle-HorizontalAlign =center HeaderStyle-CssClass="summary-title" OnPageIndexChanging="gvShip_PageIndexChanging" CellPadding="4" ForeColor="#333333" GridLines="None" >
                             <Columns>
-                                <asp:BoundField DataField="ShipID" HeaderText="序号">
+                                <asp:BoundField DataField="ShipID" HeaderText="serial number">
                                     <ItemStyle HorizontalAlign="Left" Width="30px" />
                                     <HeaderStyle HorizontalAlign="Left" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="ShipWay" HeaderText="配送方式名称">
+                                <asp:BoundField DataField="ShipWay" HeaderText="Shipping method name">
                                     <ItemStyle HorizontalAlign="Center" Width="100px" />
                                     <HeaderStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                  <asp:TemplateField HeaderText="配送默认价格">
+                                  <asp:TemplateField HeaderText="Shipping default price">
                                   <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
 									<ItemStyle HorizontalAlign="Center" Width="100px"></ItemStyle>
 									<ItemTemplate>
