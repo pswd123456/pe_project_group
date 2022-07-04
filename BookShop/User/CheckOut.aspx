@@ -1,88 +1,92 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPage.master" AutoEventWireup="true" CodeFile="CheckOut.aspx.cs" Inherits="User_CheckOut" Title="会员结帐" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="FartherMain" Runat="Server">
-<table  cellSpacing="0" cellPadding="0" width="480" align="center" border="0">
-				<tr style =" font :9pt; font-family :宋体;">
+<!DOCTYPE html>
+<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+
+<table class="table table-striped table-bordered table-hover  table-condensed" cellSpacing="0" cellPadding="0" width="480" align="center" border="0">
+				<tr style =" font :9pt; font-family :Microsoft YaHei;">
 					<th  align="left" height="25px" colspan="2px">
 						&nbsp;&nbsp;
-						<asp:label id="lblTitleInfo" Runat="server">请正确填写以下收货信息</asp:label>
+						<asp:label id="lblTitleInfo" Runat="server">Please filling the information</asp:label>
 					</th>
-				<tr>
-				</tr>
-			</table>
-			<table  cellSpacing="1" cellPadding="1" width="480" align="center" border="0">
-				<tr style =" font :9pt; font-family :宋体;">
+				</table>
+			<table class="table table-striped table-bordered table-hover  table-condensed" cellSpacing="1" cellPadding="1" width="480" align="center" border="0">
+				<tr style =" font :9pt; font-family :Microsoft YaHei;">
 					<td>
-						<table class="tableBorder" cellSpacing="0" cellPadding="0" width="95%" align="center" border="0">
-							<tr style =" font :9pt; font-family :宋体;">
+						<table class="table table-striped table-bordered table-hover  table-condensed" cellSpacing="0" cellPadding="0" width="95%" align="center" border="0">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left" width="100" style="height: 28px">
-                                    收货人真实姓名：</td>
+                                    Name：</td>
 								
 								<td style="width: 359px; height: 28px;" align =left ><asp:textbox id="txtReciverName" runat="server"></asp:textbox><font color="red">*</font></td>
 								
 								
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left">
-                                    收货人详细地址：
+                                    Address：
 								</td>
 								<td style="width: 359px" align =left >
 									<asp:textbox id="txtReceiverAddress" runat="server"></asp:textbox><font color="red">*</font></td>
 							</tr>
 
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left" style="height: 24px">
-                                    联系电话：
+                                    Phone Number：
 								</td>
 								<td style="width: 359px; height: 24px;"  align =left ><asp:textbox id="txtReceiverPhone" runat="server"></asp:textbox><font color="red"></font></td>
 							</tr>
 							
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left">
-                                    收货邮编：
+									Zip code：
 								</td>
 								<td style="width: 359px" align =left ><asp:textbox id="txtReceiverPostCode" runat="server"></asp:textbox><font color="red">*<asp:RegularExpressionValidator
                                         ID="revPostCode" runat="server" ControlToValidate="txtReceiverPostCode" Font-Size="9pt"
-                                        ValidationExpression="\d{6}" Width="134px">您的邮编输入有误</asp:RegularExpressionValidator></font></td>
+                                        ValidationExpression="\d{6}" Width="134px">Your zip code was entered incorrectly</asp:RegularExpressionValidator></font></td>
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left" height="17">
-                                    电子信箱：
+                                    Email：
 								</td>
 								<td height="17" style="width: 359px" align =left ><asp:textbox id="txtReceiverEmails" runat="server"></asp:textbox><font color="red">*<asp:RegularExpressionValidator
                                         ID="revEmail" runat="server" ControlToValidate="txtReceiverEmails" Font-Size="9pt"
-                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Width="132px">您输入的E-mail地址格式不正确，请重新输入</asp:RegularExpressionValidator></font></td>
+                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Width="132px">The E-mail address you entered is not in the correct format, please re-enter</asp:RegularExpressionValidator></font></td>
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left" height="19">
-                                    送货所在城市：
+                                    Delivery city：
 								</td>
 								<td colSpan="3" height="19" align =left ><asp:DropDownList id="ddlShipCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlShipCity_SelectedIndexChanged">
                                 </asp:DropDownList>
-                                    <asp:Label ID="labKM" runat="server" Text=""></asp:Label>公里</td>
+                                    <asp:Label ID="labKM" runat="server" Text=""></asp:Label>kilometer</td>
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left" height="19">
-                                    送货方式：
+                                    Delivery methods：
 								</td>
 								<td colSpan="3" height="19" align =left ><asp:DropDownList id="ddlShipType" runat="server" AutoPostBack="True">
                                 </asp:DropDownList>
-                                    <asp:LinkButton ID="lnkbtnSee" runat="server" OnClick="lnkbtnSee_Click">查看配送费</asp:LinkButton></td>
+                                    <asp:LinkButton ID="lnkbtnSee" runat="server" OnClick="lnkbtnSee_Click">View Shipping Fees</asp:LinkButton></td>
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="left">
-                                    支付方式：
+                                    Payment method：
 								</td>
 								<td colSpan="3" align =left ><asp:DropDownList id="ddlPayType" runat="server" AutoPostBack="True">
                                 </asp:DropDownList></td>
 							</tr>
-							<tr style =" font :9pt; font-family :宋体;">
+							<tr style =" font :9pt; font-family :Microsoft YaHei;">
 								<td align="center" colSpan="4"><br>
-									<asp:button id="btnSave" runat="server" Text="结帐" OnClick="btnSave_Click" ></asp:button>&nbsp;<asp:button id="btnReset" runat="server" Text="退出" OnClick="btnReset_Click"  ></asp:button>
+									<asp:button id="btnSave" runat="server" Text="checkout" OnClick="btnSave_Click" ></asp:button>&nbsp;<asp:button id="btnReset" runat="server" Text="quit" OnClick="btnReset_Click"  ></asp:button>
                                     </td>
 							</tr>
 						</table>
 					</td>
 				</tr>
 			</table>
-</asp:Content>
 
+</asp:Content>

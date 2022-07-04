@@ -37,7 +37,7 @@
 <body >
     <form id="form1" runat="server" >
 
-        <div id="header" style="background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
+        <div id="header" style="height:50px;background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
 
             <div style="width:80px; float:right; position:relative; right:10px;">
                 <asp:LinkButton class="btn btn-danger btn-xs" ID="lnkbtnShopCart" runat="server" OnClick="lnkbtnShopCart_Click" CausesValidation="False">MYCART</asp:LinkButton>
@@ -52,7 +52,7 @@
 
         </div>
 
-        <div id="searchBar" style="" align="center">
+        <div id="searchBar" align="center">
             <uc9:BookSearch ID="BookSearch1" runat="server" />
         </div>
 
@@ -65,6 +65,7 @@
                 <asp:contentplaceholder id="farthermain" runat ="server" ></asp:contentplaceholder>
             </div>
         </div>
+
 
     </form>
     </body>
