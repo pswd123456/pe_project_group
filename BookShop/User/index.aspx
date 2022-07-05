@@ -90,7 +90,7 @@
                 </asp:DataList>
 
 
-    <div style ="width:600px;">
+    <div style ="width:840px;">
         <h3 style ="border-bottom: 1px solid #eee">Discount</h3>
     </div>
                 <asp:DataList ID="DLDiscount" runat="server" DataKeyField ="BookID" RepeatColumns="3" RepeatDirection="Horizontal" OnItemCommand="DLDiscount_ItemCommand" CellPadding="4" ForeColor="#333333">
