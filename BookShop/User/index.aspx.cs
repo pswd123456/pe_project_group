@@ -127,4 +127,9 @@ public partial class index : System.Web.UI.Page
             AddShopCart(e,DLDiscount);
         }
     }
+
+    protected void DLrefinement_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
