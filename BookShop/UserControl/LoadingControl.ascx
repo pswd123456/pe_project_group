@@ -1,62 +1,48 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeFile="LoadingControl.ascx.cs" Inherits="LoadingControl" %>        
-<table style="/*background-image: url(../Images/index/登录.jpg);*/ width: 220px; height: 117px" border="0" cellpadding="0" cellspacing="0" runat =server   id=tabLoading >
-    <tr>
-        <td align="center" valign="top" style="height: 117px; width: 220px;" >
-              <table style ="width: 178px; height: 90px; font-size: 9pt; font-family: 宋体;"   >
-                <tr style ="width: 152px;height: 18px; font-size: 9pt; font-family: 宋体;">
-                    <td style="width: 1575px">
-                        &nbsp;
-                        会员名：</td>
-                    <td>
-                        <asp:TextBox ID="txtName" runat="server" Height="16px" Width="100px"></asp:TextBox></td>
-                  
-                </tr>
-                <tr style ="width: 152px;height: 18px;font-size: 9pt; font-family: 宋体;">
-                    <td style="height: 18px; width: 1575px;">
-                        &nbsp; &nbsp;
-                        密码：</td>
-                    <td style="width: 158px; height: 18px;">
-                        <asp:TextBox ID="txtPassword" runat="server"  TextMode="Password" Height="16px" Width="100px"></asp:TextBox></td>
-                   
-                </tr>
-                <tr style ="width: 152px;height: 18px;font-size: 9pt; font-family: 宋体;">
-                    <td style="width: 1575px; height: 18px;" >
-                        &nbsp;
-                        验证码：</td>
-                    <td style="width: 158px; text-align: justify;">
-                        <asp:TextBox ID="txtValid" runat="server" Height="12px" Width="48px"></asp:TextBox>
-                        <asp:Label ID="lbValid" runat="server" Text="8888" BackColor="Silver" Font-Names="幼圆" Height="14px" Width="30px"></asp:Label></td>
-                  
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        &nbsp; &nbsp; &nbsp;
-                        <asp:Button ID="btnLoad" runat="server" Text="登录" OnClick="btnLoad_Click" Height="18px" Width="40px" CausesValidation="False" /><asp:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" Height="18px" Width="40px" CausesValidation="False" /></td>
-                </tr>
-            </table>  
-        </td>
-    </tr>
-</table>
-  <table  style="background-image: url(../Images/index/登录.jpg); width: 220px; height: 117px; font-size: 9pt; font-family: 宋体;"   runat =server id=tabLoad visible =false border="0" cellpadding="0" cellspacing="0"  >
-                <tr>
-                          <td align="center" valign="top" style="height: 117px; width: 220px;" >
-                             <br /><br /><table style ="width: 178px; height: 50px; font-size: 9pt; font-family: 宋体;"   >
-                <tr>
-                    <td colspan="2"  >
-                        &nbsp; 
-                        欢迎<font color="#80A5E7"><u><%=Session["UserName"]%></u></font>光临！</td>
-                </tr> 
-                <tr>
-                    <td colspan="2" >
-                        &nbsp; 
-                        <asp:Button ID="btnLogout" runat="server" Height="18px" Text="注销"
-                            Width="40px" OnClick="btnLogout_Click" CausesValidation="False" />&nbsp;
-                        <asp:HyperLink ID="hpLinkUser" runat="server" NavigateUrl="~/User/UpdateMember.aspx">更新信息</asp:HyperLink>
-                        <asp:HyperLink ID="hpLinkAddAP" runat="server" NavigateUrl="~/User/AddAdvancePay.aspx">会员充值</asp:HyperLink></td>
-                </tr>
-            </table></td></tr></table>
 
+<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
 
-      
+<div class="container" id="tabLoading" runat="server">
+    <div class="col-md-4" style="background-color:#eee; width:250px">
+        <center>
+            <asp:Label ID="Label1" runat="server" Text="Log in" style="font-size: 20px"></asp:Label>
+        </center>
+    
+            <div class="form-group">
+                <label>Username:</label>
+                <asp:TextBox ID="txtName" runat="server"  class="form-control" style="color:black;height:20px"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <asp:TextBox ID="txtPassword" runat="server" class="form-control" style="color:black;height:20px"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:TextBox ID="txtValid" runat="server" Height="16px" Width="115px"></asp:TextBox>
+                <asp:Label ID="lbValid" runat="server" Text="8888" BackColor="Silver"  Height="21px" Width="54px"></asp:Label>
+            </div>
+            <div class="form-group" align="center">
+                 <asp:Button ID="btnLoad" runat="server" Text="Confirm" OnClick="btnLoad_Click" class="btn btn-success form-control" CausesValidation="False" />
+                 <asp:LinkButton ID="btnRegister" runat="server" OnClick="btnRegister_Click" >Register Here</asp:LinkButton>
+                <br/>
+            </div>
+
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<div class="container" id="tabLoad" runat="server" visible="false">
+    <div class="col-md-4" style="background-color:#eee; width:250px">
+        <asp:Label ID="Label2" runat="server" Text="Welcome! " Font-Size="15px"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="Label" Font-color="#80A5E7" Font-Size="15px"><u><%=Session["UserName"]%></u></asp:Label>
+        <asp:Button ID="btnLogout" runat="server" Height="24px" Text="Log Out" Width="82px" OnClick="btnLogout_Click" CausesValidation="False" />
+        <br/>
+        <asp:HyperLink ID="hpLinkUser" runat="server" NavigateUrl="~/User/UpdateMember.aspx"  >Update Info</asp:HyperLink>
+        &nbsp;&nbsp;&nbsp;
+        <asp:HyperLink ID="hpLinkAddAP" runat="server" NavigateUrl="~/User/AddAdvancePay.aspx" >Top Up</asp:HyperLink>
+
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
            
              
