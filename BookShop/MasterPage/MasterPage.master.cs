@@ -21,7 +21,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (Session["UID"] == null)
         {
-            Response.Write("<script>alert('您还没有登录，请先登录！')</script>");
+            Response.Write("<script>alert('Please Login First!')</script>");
         }
         else
         {
