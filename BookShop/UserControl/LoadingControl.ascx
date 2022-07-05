@@ -37,8 +37,6 @@
         <asp:Button ID="btnLogout" runat="server" Height="24px" Text="Log Out" Width="82px" OnClick="btnLogout_Click" CausesValidation="False" />
         <br/>
         <asp:HyperLink ID="hpLinkUser" runat="server" NavigateUrl="~/User/UpdateMember.aspx"  >Update Info</asp:HyperLink>
-        &nbsp;&nbsp;&nbsp;
-        <asp:HyperLink ID="hpLinkAddAP" runat="server" NavigateUrl="~/User/AddAdvancePay.aspx" >Top Up</asp:HyperLink>
 
     </div>
     <div class="col-md-4"></div>

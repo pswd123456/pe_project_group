@@ -10,7 +10,9 @@
                         <table align="center" cellpadding="10" cellspacing="10" style =" width :280px; height:200px;" >
                             <tr align =center style ="  height:150px;" >
                                 <td colspan="2" align="center" >
-                                    <asp:Image ID="imageRefine" width=105px height=150px runat="server"  ImageUrl =<%#DataBinder.Eval(Container.DataItem,"BookUrl")%>/></td>
+                                    <asp:Image ID="imageRefine" width=105px height=150px runat="server"  ImageUrl =<%#DataBinder.Eval(Container.DataItem,"BookUrl")%>/>
+
+                                </td>
                             </tr>
                             <tr align =center valign =bottom style =" height:10px; font-size: 10pt; ">
                                 <td colspan="2" align="center">

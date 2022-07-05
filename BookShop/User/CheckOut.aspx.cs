@@ -69,8 +69,11 @@ public partial class User_CheckOut : System.Web.UI.Page
           {
               return;
           }
+
           float  P_Flt_TotalGP=TotalBookPrice();
+
           int P_Int_Cart = ucObj.IsUserCart(Convert.ToInt32(Session["UID"].ToString()), P_Flt_TotalGP, P_Flt_TotalSF);
+
           if (P_Int_Cart == -100 && ddlPayType.SelectedItem.Text.Trim() == "Membership")
           {
               Response.Write("<script>alert('Insufficient balance please recharge ！')</script>");

@@ -37,14 +37,18 @@
 <body >
     <form id="form1" runat="server" >
 
-        <div id="header" style="height:50px;background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
+        <div id="header" style="height:140px;background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
 
             <div style="width:80px; float:right; position:relative; right:10px;">
                 <asp:LinkButton class="btn btn-danger btn-xs" ID="lnkbtnShopCart" runat="server" OnClick="lnkbtnShopCart_Click" CausesValidation="False">MYCART</asp:LinkButton>
             </div>
-                
+                <br />
+            <div>
+                <h1 style="color:white">Online Bookshop</h1>
+            </div>
+
             <div align="center">
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/index.aspx" class="mytext">Home</asp:HyperLink>
+                <font color="white"></font><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/index.aspx"  ForeColor="White">Home</asp:HyperLink>
                 <font color="white">/ </font><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=1" ForeColor="White">Category1</asp:HyperLink>
                 <font color="white">/</font><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=3" ForeColor="White">Category2</asp:HyperLink>
                 <font color="white">/ </font><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/User/RHDBook.aspx?Display=2" ForeColor="White">Category3</asp:HyperLink>
