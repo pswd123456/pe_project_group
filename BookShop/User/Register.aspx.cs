@@ -42,10 +42,20 @@ public partial class Register : System.Web.UI.Page
 
             Session["Username"] = "";
             Session["Username"] =txtName.Text.Trim();
-            Response.Write("<script>alert('Register Successfully！');location='index.aspx'</script>");
+            Response.Write("<script>alert('恭喜您，注册成功！');location='index.aspx'</script>");
         }
     }
-    
+    protected void btnCheck_Click(object sender, EventArgs e)
+    {
+        bool result = mc.CheckU(txtName.Text);
+        if (result)
+        {
+            lblResult.Text = "该用户已存在";
+        }
+        else {
+            lblResult.Text = "不存在该用户";
+        }
+    }
     protected void btnReturn_Click(object sender, EventArgs e)
     {
         Response.Redirect("index.aspx");

@@ -21,9 +21,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (Session["UID"] == null)
         {
-
-            Response.Write("<script>alert('Please Login')</script>");
-
+            Response.Write("<script>alert('Please Login First!')</script>");
         }
         else
         {
