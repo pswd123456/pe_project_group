@@ -21,7 +21,7 @@ public partial class User_CheckOut : System.Web.UI.Page
         {
             Response.Redirect("index.aspx");          
         }
-        btnSave.Attributes.Add("OnClick", "javascript:return confirm('你确定要结帐吗？')");
+        btnSave.Attributes.Add("OnClick", "javascript:return confirm('Sure to pay？')");
         if (!IsPostBack)
         {
             ddlCityBind();
@@ -48,10 +48,6 @@ public partial class User_CheckOut : System.Web.UI.Page
        float  P_Flt_TotalGP = float.Parse(ds.Tables["TotalInfo"].Rows[0][0].ToString());
        return P_Flt_TotalGP;
     }
-  /// <summary>
-  ///  所有图书运输费用
-  /// </summary>
-    /// <returns>返回图书运输费用</returns>
     public float  TotalShipFee()
     {
         P_Flt_TotalSF = 0;
@@ -63,7 +59,7 @@ public partial class User_CheckOut : System.Web.UI.Page
     {
         if (txtReciverName.Text == "" || txtReceiverAddress.Text == "" || txtReceiverPhone.Text == "" || txtReceiverPostCode.Text == "" || txtReceiverEmails.Text == "")
         {
-            Response.Write("<script>alert('请输入完整的信息 ！')</script>");
+            Response.Write("<script>alert('Please fulfill all the fields ！')</script>");
             return;
         }
         else
@@ -73,11 +69,14 @@ public partial class User_CheckOut : System.Web.UI.Page
           {
               return;
           }
+
           float  P_Flt_TotalGP=TotalBookPrice();
+
           int P_Int_Cart = ucObj.IsUserCart(Convert.ToInt32(Session["UID"].ToString()), P_Flt_TotalGP, P_Flt_TotalSF);
-          if (P_Int_Cart == -100 && ddlPayType.SelectedItem.Text.Trim() == "会员卡")
+
+          if (P_Int_Cart == -100 && ddlPayType.SelectedItem.Text.Trim() == "Membership")
           {
-              Response.Write("<script>alert('您的会员卡中余额不足，不能购买图书，请充值！')</script>");
+              Response.Write("<script>alert('Insufficient balance please recharge ！')</script>");
               return;
           }
           else
@@ -89,7 +88,7 @@ public partial class User_CheckOut : System.Web.UI.Page
                   ucObj.AddBuyInfo(Convert.ToInt32(ds.Tables["SCInfo"].Rows[i][1].ToString()), Convert.ToInt32(ds.Tables["SCInfo"].Rows[i][2].ToString()), P_Int_OrderID, float.Parse (ds.Tables["SCInfo"].Rows[i][3].ToString()), Convert.ToInt32(ds.Tables["SCInfo"].Rows[i][4].ToString()));
                } 
                ucObj.DeleteSCInfo(Convert.ToInt32(Session["UID"].ToString()));
-               Response.Write("<script>alert('购物成功 ！');location='index.aspx'</script>");
+               Response.Write("<script>alert('shopping success！');location='index.aspx'</script>");
                return;
           }
          
