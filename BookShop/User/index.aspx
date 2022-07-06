@@ -6,6 +6,7 @@
             <td  align="left" style="width :560px;height :22px; vertical-align: top; text-align: left;" colspan="0" rowspan="0" background ="../Images/index/精品推荐.jpg" >
              </td>
         </tr>
+
         <tr>
             <td align="left" style ="width :560px; " background ="../Images/index/精品推荐下面部分.jpg">
                 <asp:DataList ID="DLrefinement" DataKeyField ="BookID" runat="server" RepeatColumns="3" RepeatDirection="Horizontal"  OnItemCommand="DLrefinement_ItemCommand" CellPadding="4" ForeColor="#333333">
