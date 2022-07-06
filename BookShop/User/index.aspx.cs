@@ -57,19 +57,19 @@ public partial class index : System.Web.UI.Page
             if (Book == null)
             {
                 //显示错误信息
-                Response.Write("<script>alert('No Data');</script>");
+                Response.Write("<script>alert('没有可用的数据');</script>");
                 return;
             }
             else
             {
                 ucObj.AddShopCart(Book.BookID, Book.MemberPrice, Convert.ToInt32(Session["UID"].ToString()));
-                Response.Write("<script>alert('Successful Adding！')</script>");
+                Response.Write("<script>alert('恭喜您，添加成功！')</script>");
 
             }
         }
         else
         {
-            Response.Write("<script>alert('Please Login First！');</script>");
+            Response.Write("<script>alert('请先登录，谢谢合作！');</script>");
 
         }
 
@@ -126,10 +126,5 @@ public partial class index : System.Web.UI.Page
         {
             AddShopCart(e,DLDiscount);
         }
-    }
-
-    protected void DLrefinement_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
     }
 }
