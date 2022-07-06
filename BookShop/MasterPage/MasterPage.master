@@ -40,8 +40,12 @@
         <div id="header" style="height:140px;background-color:cadetblue;font-size: 9pt; font-family: Microsoft YaHei; /*background-image: url(../Images/index/navigation.jpg);"align ="center">
 
             <div style="width:80px; float:right; position:relative; right:10px;">
+
+            <div style="width:80px; float:right; position:relative; right:10px;">
                 <asp:LinkButton class="btn btn-danger btn-xs" ID="lnkbtnShopCart" runat="server" OnClick="lnkbtnShopCart_Click" CausesValidation="False">MYCART</asp:LinkButton>
             </div>
+
+
                 <br />
             <div>
                 <h1 style="color:white">Online Bookshop</h1>
