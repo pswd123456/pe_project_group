@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <%@ Register Src="../UserControl/navigationControl.ascx" TagName="navigationControl" TagPrefix="uc2" %>
-
 <%@ Register Src="../UserControl/LoadingControl.ascx" TagName="LoadingControl" TagPrefix="uc7" %>
 <%@ Register Src="../UserControl/ShoppingCarControl.ascx" TagName="ShoppingCarControl" TagPrefix="uc8" %>
 <%@ Register Src="~/UserControl/BookSearch.ascx" TagName="BookSearch" tagPrefix="uc9" %>

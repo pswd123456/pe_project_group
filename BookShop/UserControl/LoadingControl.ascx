@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label>Password:</label>
-                <asp:TextBox ID="txtPassword" runat="server" class="form-control" style="color:black;height:20px"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" class="form-control" style="color:black;height:20px;" TextMode="Password"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:TextBox ID="txtValid" runat="server" Height="16px" Width="115px"></asp:TextBox>
