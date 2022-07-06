@@ -77,6 +77,5 @@ public partial class LoadingControl : System.Web.UI.UserControl
         Session["Username"] = null;
         tabLoad.Visible = false;
         tabLoading.Visible = true;
-        Response.Redirect("index.aspx");
     }
 }

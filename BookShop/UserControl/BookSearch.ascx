@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BookSearch.ascx.cs" Inherits="UserControl_BookSearch" %>
+
 <!DOCTYPE html>
 <script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
 <link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
@@ -18,5 +19,6 @@
 
     </body>
 </html>
+
 
 

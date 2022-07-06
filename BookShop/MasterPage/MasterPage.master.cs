@@ -21,7 +21,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         if (Session["UID"] == null)
         {
+<<<<<<< HEAD
+            Response.Write("<script>alert('Please Login First!')</script>");
+=======
             Response.Write("<script>alert('Please Login')</script>");
+>>>>>>> parent of 7f1d696 (Merge pull request #5 from pswd123456/Wang)
         }
         else
         {
