@@ -18,7 +18,7 @@ public partial class UserControl_BookSearch : System.Web.UI.UserControl
     }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
-        if (txtSearch.Text == "") { Response.Write("<script>alert('请输入要搜索的图书名');</script>"); }
+        if (txtSearch.Text == "") { Response.Write("<script>alert('Please enter the name of book');</script>"); }
         else
         {
             Response.Redirect("~/User/SearchResult.aspx?SearchName=" + txtSearch.Text);
