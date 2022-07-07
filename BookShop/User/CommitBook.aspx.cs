@@ -86,38 +86,7 @@ public partial class User_CommitBook : System.Web.UI.Page
         ShopCartBind();
         TotalDs();
     }
-    protected void gvShopCart_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-    {
-        gvShopCart.EditIndex = -1;
-        ShopCartBind();
-        TotalDs();
-    }
-    protected void gvShopCart_RowUpdating(object sender, GridViewUpdateEventArgs e)
-    {
-        int P_Int_CartID = Convert.ToInt32(gvShopCart.DataKeys[e.RowIndex].Value.ToString());
-        int P_Int_Num =Convert.ToInt32( ((TextBox)(gvShopCart.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString());
-        if (IsValidNum(P_Int_Num.ToString()) == true)
-        {
-            ucObj.UpdateSCI(Convert.ToInt32(Session["UID"].ToString()), P_Int_CartID, P_Int_Num);
-            gvShopCart.EditIndex = -1;
-            ShopCartBind();
-            TotalDs();
-        }
-        else
-        {
-            gvShopCart.EditIndex = -1;
-            ShopCartBind();
-            TotalDs();
-        
-        }
-    }
-    protected void gvShopCart_RowEditing(object sender, GridViewEditEventArgs e)
-    {
-        gvShopCart.EditIndex = e.NewEditIndex;
-        ShopCartBind();
-        TotalDs();
-    }
-    //判断修改的数据是否为有效的数据
+  
     public bool IsValidNum(string num)
     {
         return Regex.IsMatch(num, @"^\+?[1-9][0-9]*$");

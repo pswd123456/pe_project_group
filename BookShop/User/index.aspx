@@ -5,7 +5,9 @@
     <div style ="width:840px;">
         <h3 style ="border-bottom: 2px solid #eee">Recommendation</h3>
     </div>
-              <asp:DataList ID="DLrefinement" DataKeyField ="BookID" runat="server" RepeatColumns="3" RepeatDirection="Horizontal"  OnItemCommand="DLrefinement_ItemCommand" CellPadding="4" ForeColor="#333333" OnSelectedIndexChanged="DLrefinement_SelectedIndexChanged">
+              <asp:DataList ID="DLrefinement" DataKeyField ="BookID" runat="server" RepeatColumns="3" RepeatDirection="Horizontal"  
+                  OnItemCommand="DLrefinement_ItemCommand" CellPadding="4" ForeColor="#333333" OnSelectedIndexChanged="DLrefinement_SelectedIndexChanged">
+
                     <ItemTemplate>
                         <table align="center" cellpadding="10" cellspacing="10" style =" width :280px; height:200px;" >
                             <tr align =center style ="  height:150px;" >
@@ -40,11 +42,13 @@
                             </tr>
                         </table>
                     </ItemTemplate>
+
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                     <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                     <AlternatingItemStyle BackColor="White" />
                     <ItemStyle BackColor="#EFF3FB" />
                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+
                 </asp:DataList>
                     
               

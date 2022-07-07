@@ -1,12 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterPage.master" AutoEventWireup="true" CodeFile="CommitBook.aspx.cs" Inherits="User_CommitBook" Title="购物车" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="FartherMain" Runat="Server">
 
-  <table  cellSpacing="0" cellPadding="0" width="480" align="center" border="1">
+            <table  cellSpacing="0" cellPadding="0" width="480" align="center" border="1">
 				<tr style =" font :9pt;">
 					<th height="25" colspan="2">
 						<asp:label id="lblTitleInfo" Runat="server" Font-Size="18">Cart</asp:label>
 					</th>
-				</table>
+			</table>
 
 			<table  cellSpacing="1" cellPadding="1" width="480" align="center" border="1">
 				<tr style =" font :9pt;">
@@ -16,10 +16,10 @@
 							<td align="left" style="height: 135px">
 
 							 <asp:GridView ID="gvShopCart" DataKeyNames ="CartID" runat="server" AllowPaging="True" 
-                                 AutoGenerateColumns="False" OnPageIndexChanging="gvShopCart_PageIndexChanging" 
-                                 OnRowCancelingEdit="gvShopCart_RowCancelingEdit" OnRowDeleting="gvShopCart_RowDeleting" 
-                                 OnRowEditing="gvShopCart_RowEditing" OnRowUpdating="gvShopCart_RowUpdating" Width="477px" 
-                                 CellPadding="4" ForeColor="#333333" GridLines="None">
+                                 AutoGenerateColumns="False" 
+                                 OnPageIndexChanging="gvShopCart_PageIndexChanging" 
+                                 OnRowDeleting="gvShopCart_RowDeleting" 
+                                 Width="477px" CellPadding="4" ForeColor="#333333" GridLines="None">
 
                                  <Columns>
                                      <asp:BoundField DataField="BookName" HeaderText="Book Name" ReadOnly="True">
@@ -33,7 +33,7 @@
                                      <ItemStyle HorizontalAlign =Center />
                                      
                                      <ItemTemplate >$ 
-                                         <%#GetMKPStr(DataBinder.Eval(Container.DataItem, "MarketPrice", "{0:f2}").ToString())%>
+                                     <%#GetMKPStr(DataBinder.Eval(Container.DataItem, "MarketPrice", "{0:f2}").ToString())%>
                                      </ItemTemplate>   
                                          
                                      </asp:TemplateField>
@@ -64,7 +64,6 @@
                                      </asp:TemplateField>
 
                                      <asp:CommandField ShowDeleteButton="True" DeleteText="Delete"/>
-                                     <asp:CommandField ShowEditButton="True" EditText="Edit"/>
 
                                  </Columns>
 
